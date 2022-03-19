@@ -23,7 +23,7 @@ export class PublicacionesComponent implements OnInit {
     },
     {
       "id":"b2",
-      "imagen": "assets/imagenes/4.jpg"
+      "imagen": "assets/imagenes/2.jpg"
     },
     {
       "id":"c4",
