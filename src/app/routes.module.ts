@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {FeedComponent} from './feed/feed.component';
 import {PerfilComponent} from './perfil/perfil.component';
-//import {FeedComponent} from './feed/feed.component';
+import { PublicacionComponent } from './publicacion/publicacion.component';
 const routes : Routes=[
   {
     path:'feed', component: FeedComponent
@@ -13,7 +13,7 @@ const routes : Routes=[
     path:'perfil', component: PerfilComponent
   },
   {
-  path:'', redirectTo: '/perfil', pathMatch: 'full'
+    path: 'publicacion/:id', component: PublicacionComponent
   }
 ]
 

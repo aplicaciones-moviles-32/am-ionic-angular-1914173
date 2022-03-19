@@ -9,13 +9,17 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { PublicacionesComponent } from './publicaciones/publicaciones.component';
 import { FormsModule } from '@angular/forms';
 import { RoutesModule } from './routes.module';
+import { TabsComponent } from './tabs/tabs.component';
+import { PublicacionComponent } from './publicacion/publicacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedComponent,
     PerfilComponent,
-    PublicacionesComponent
+    PublicacionesComponent,
+    TabsComponent,
+    PublicacionComponent
   ],
   imports: [
     BrowserModule,

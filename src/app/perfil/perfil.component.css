@@ -23,3 +23,7 @@
 .container-img{
     position: relative;
 }
+
+ion-grid{
+    margin:0;
+}
