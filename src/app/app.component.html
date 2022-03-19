@@ -1,3 +1,19 @@
 <ion-content>
-  <app-feed></app-feed>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Hola, Instagram</ion-title>
+      <ion-button routerLink="/perfil">Perfil</ion-button>
+      <ion-button routerLink="/feed">Feed</ion-button>
+      <router-outlet></router-outlet>
+    </ion-toolbar>
+  </ion-header>
+  <!-- 
+  <ion-button (click)="togglePerfil()">
+    <span *ngIf="perfil">Vista Feed </span>
+    <span *ngIf="!perfil">Vista Perfil </span>
+  </ion-button>
+
+  <app-feed *ngIf="!perfil"> </app-feed>
+  <app-perfil *ngIf="perfil"> </app-perfil>
+  -->
 </ion-content>
