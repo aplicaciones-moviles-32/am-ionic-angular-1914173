@@ -1,22 +1,22 @@
 <ion-grid>
     <ion-row>
         <ion-col>
-            <div class="container-img">
-                <div class="historia"></div>
-                <img [src]="usuario.fotodeperfil" alt="" class="fotoperfil">
+            <div style="text-align:center" class="container-img">
+                <!--<div class="historia"></div>-->
+                <img [src]="usuario.fotodeperfil" alt="" class="fotoperfil" class="outline">
             </div>
         </ion-col>
-        <ion-col>
-           <p style="text-align:center;"><font size="5"> <strong>{{usuario.posts}}</strong></font></p>
-           <p style="text-align:center;"><font size="4">Posts</font></p>
+        <ion-col style="text-align:center;">
+           <p ><font size="4"> <strong>{{usuario.posts}}</strong></font></p>
+           <p><font size="3">Posts</font></p>
         </ion-col>
-        <ion-col>
-            <p style="text-align:center;"><strong><font size="5">{{usuario.followers}}</font></strong></p>
-           <p style="text-align:center;"><font size="4">Followers</font></p>
+        <ion-col style="text-align:center;">
+            <p ><strong><font size="4">{{usuario.followers}}</font></strong></p>
+           <p ><font size="3">Followers</font></p>
         </ion-col>
-        <ion-col>
-            <p style="text-align:center;"><strong><font size="5">{{usuario.following}}</font></strong></p>
-           <p style="text-align:center;"><font size="4">Following</font></p>
+        <ion-col style="text-align:center;">
+            <p><strong><font size="4">{{usuario.following}}</font></strong></p>
+           <p><font size="3">Following</font></p>
         </ion-col>
     </ion-row>
     <ion-row>

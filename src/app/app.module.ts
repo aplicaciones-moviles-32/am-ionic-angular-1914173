@@ -15,6 +15,8 @@ import { PublicacionComponent } from './publicacion/publicacion.component';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule} from '@angular/common/http';
 
+import { CintaComponent } from './cinta/cinta.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { HttpClientModule} from '@angular/common/http';
     PerfilComponent,
     PublicacionesComponent,
     TabsComponent,
-    PublicacionComponent
+    PublicacionComponent,
+    CintaComponent
   ],
   imports: [
     BrowserModule,
