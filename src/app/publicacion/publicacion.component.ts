@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, OnChanges} from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-
+import { BdServiceService } from '../bd-service.service';
 @Component({
   selector: 'app-publicacion',
   templateUrl: './publicacion.component.html',
@@ -9,50 +10,56 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PublicacionComponent implements OnInit {
 
-  constructor(private ruta: ActivatedRoute) { }
+  load: boolean= true;
+  constructor(private ruta: ActivatedRoute, private bd: BdServiceService) { }
 
   publicacion = this.ruta.snapshot.params['id'];
   publicacionImprimir: any = {}
   
+  ngOnChanges(): void{
+    
+  }
   ngOnInit(): void {
-    this.obtenerPublicacion(this.publicacion);
+      this.obtenerPublicacion();
+    //this.publicacionImprimir=this.detalle;
   }
 
-  publicaciones = [
-    {
-      "id":"a1",
-      "imagen": "assets/imagenes/1.jpg"
-    },
-    {
-      "id":"a2",
-      "imagen": "assets/imagenes/3.jpg"
-    },
-    {
-      "id":"b2",
-      "imagen": "assets/imagenes/2.jpg"
-    },
-    {
-      "id":"c4",
-      "imagen": "assets/imagenes/5.jpg"
-    },
-    {
-      "id":"g1",
-      "imagen": "assets/imagenes/6.jpg"
-    },
-    {
-      "id":"g4",
-      "imagen": "assets/imagenes/7.jpg"
-    }
+  detalle: any = {
+ 
+  }
+
+  publicaciones: any=[
   ]
 
-  obtenerPublicacion(id: string) : any {
-    
-    for(let x= 0; x < this.publicaciones.length; x++) {
-      if(id == this.publicaciones[x].id) {
-        this.publicacionImprimir = this.publicaciones[x];
+  
+  index: any;
+  obtenerPublicacion() : any {
+    this.bd.getPublicacionesUsuario().subscribe((res: any) => {
+      this.publicaciones = res;
+      console.log(this.publicaciones);
+      this.buscarPubli(this.publicacion);
+    })
+  }
+  buscarPubli(s: string) : any {
+    let conta: number =0;
+    for(var i of this.publicaciones){
+      console.log(s);
+      console.log(i.id);
+      if(s == i.id) {
+        this.index = conta;
+        console.log('checked');
+        console.log(this.index);
       }
+      conta++;
     }
-    console.log(this.publicacionImprimir);
-    return this.publicacionImprimir;
-  } 
+    console.log(this.index);
+    this.bd.getDetalle(this.index).subscribe((res: any) =>{
+      this.publicacionImprimir=res;
+      console.log(res);
+      this.load=true;
+    })
+    console.log('going through');
+    console.log(this.publicacionImprimir); 
+  }
+
 }

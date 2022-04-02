@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { BdServiceService } from '../bd-service.service';
 
 @Component({
   selector: 'app-feed',
@@ -7,20 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private bd: BdServiceService ) { }
 
   ngOnInit(): void {
+    this.bd.getPublicaciones().subscribe((res: any) => {
+      this.perrillos=res;
+    });
   }
-  perrillos = [
-    {
-      "usuario": "@unosperrillos",
-      "src": "assets/perrillo.jpg",
-      "caption": "unos perrillos..."
-    },
-    {
-      "usuario": "@amsiedad",
-      "src": "assets/amsiedad.jpg",
-      "caption": "me da amsiedad"
-    }
+
+  getPublicaciones(): any {
+    
+  }
+  perrillos: any = [
   ];
 }

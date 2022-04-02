@@ -1,0 +1,50 @@
+{
+    "usuario": {
+        "nombre": "Gizmo",
+        "usuario":"@gizmo",
+        "descripcion": "Hello World",
+        "followers": 52642,
+        "following": 203,
+        "posts": 123,
+        "fotodeperfil": "assets/imagenes/2.jpg",
+        "publicaciones": [
+            {
+              "id":"a1",
+              "imagen": "assets/imagenes/1.jpg"
+            },
+            {
+              "id":"a2",
+              "imagen": "assets/imagenes/3.jpg"
+            },
+            {
+              "id":"b2",
+              "imagen": "assets/imagenes/2.jpg"
+            },
+            {
+              "id":"c4",
+              "imagen": "assets/imagenes/5.jpg"
+            },
+            {
+              "id":"g1",
+              "imagen": "assets/imagenes/6.jpg"
+            },
+            {
+              "id":"g4",
+              "imagen": "assets/imagenes/7.jpg"
+            }
+          ]
+    },
+    "publicaciones": [
+        {
+          "usuario": "@unosperrillos",
+          "src": "assets/perrillo.jpg",
+          "caption": "unos perrillos..."
+        },
+        {
+          "usuario": "@amsiedad",
+          "src": "assets/amsiedad.jpg",
+          "caption": "me da amsiedad"
+        }
+      ]
+
+}

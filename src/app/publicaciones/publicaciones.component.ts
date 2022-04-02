@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { BdServiceService } from '../bd-service.service';
 
 @Component({
   selector: 'app-publicaciones',
@@ -7,35 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicacionesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private bd: BdServiceService) { }
 
   ngOnInit(): void {
+    this.bd.getPublicacionesUsuario().subscribe((res: any) => {
+      this.publicaciones = res;
+    })
   }
 
-  publicaciones = [
-    {
-      "id":"a1",
-      "imagen": "assets/imagenes/1.jpg"
-    },
-    {
-      "id":"a2",
-      "imagen": "assets/imagenes/3.jpg"
-    },
-    {
-      "id":"b2",
-      "imagen": "assets/imagenes/2.jpg"
-    },
-    {
-      "id":"c4",
-      "imagen": "assets/imagenes/5.jpg"
-    },
-    {
-      "id":"g1",
-      "imagen": "assets/imagenes/6.jpg"
-    },
-    {
-      "id":"g4",
-      "imagen": "assets/imagenes/7.jpg"
-    }
+  publicaciones: any = [
   ]
+
+  getPublicaciones(): void{
+    this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario/publicaciones.json').subscribe(res =>{
+      this.publicaciones=res;
+    })
+  }
 }

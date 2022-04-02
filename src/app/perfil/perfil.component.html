@@ -2,26 +2,32 @@
     <ion-row>
         <ion-col>
             <div class="container-img">
-                <img [src]="usuario.fotodeperfil" alt="" class="fotoperfil">
                 <div class="historia"></div>
+                <img [src]="usuario.fotodeperfil" alt="" class="fotoperfil">
             </div>
         </ion-col>
         <ion-col>
-           <p><strong>{{usuario.posts}}</strong></p>
-           <p>Posts</p>
+           <p style="text-align:center;"><font size="5"> <strong>{{usuario.posts}}</strong></font></p>
+           <p style="text-align:center;"><font size="4">Posts</font></p>
         </ion-col>
         <ion-col>
-            <p><strong>{{usuario.followers}}</strong></p>
-           <p>Followers</p>
+            <p style="text-align:center;"><strong><font size="5">{{usuario.followers}}</font></strong></p>
+           <p style="text-align:center;"><font size="4">Followers</font></p>
         </ion-col>
         <ion-col>
-            <p><strong>{{usuario.following}}</strong></p>
-           <p>Following</p>
+            <p style="text-align:center;"><strong><font size="5">{{usuario.following}}</font></strong></p>
+           <p style="text-align:center;"><font size="4">Following</font></p>
         </ion-col>
     </ion-row>
     <ion-row>
         <ion-col>
-            {{usuario.nombre}}
+            <p><font size="4"><strong>{{usuario.nombre}}</strong></font></p>
+        </ion-col>
+        <ion-col>
+
+        </ion-col>
+        <ion-col>
+            
         </ion-col>
     </ion-row>  
     <ion-row>
@@ -30,13 +36,17 @@
         </ion-col>   
     </ion-row>
     <ion-row>
-        <ion-button (click)="toggleEditar()">Editar Perfil</ion-button>
+        <ion-button expand="block" fill="outline" color="dark" (click) ="toggleEditar() ">Editar Perfil</ion-button>
     </ion-row>
     <ion-row *ngIf="editando">
         <ion-input [(ngModel)]="bio" class="borde-input"></ion-input>
-        <ion-button (click)="guardarNuevaBio()">Guardar</ion-button>
-        <ion-button (click)="toggleEditar()">Cancelar</ion-button>
     </ion-row>
+    <ion-row *ngIf="editando">
+        <ion-button expand="block" fill="outline" color="dark" (click)="guardarNuevaBio()">Guardar</ion-button>
+        <ion-button expand="block" fill="outline" color="dark" (click)="toggleEditar()">Cancelar</ion-button>
+    </ion-row>
+
 </ion-grid>
 
 <app-publicaciones></app-publicaciones>
+

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { BdServiceService } from '../bd-service.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,19 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private bd: BdServiceService) { }
 
   ngOnInit(): void {
+    this.bd.getDatosUsuario().subscribe((res: any) => {
+      this.usuario = res;
+    })
   }
 
-  usuario = {
-    "nombre": "Gizmo",
-    "usuario":"@gizmo",
-    "descripcion": "Hello World",
-    "followers": 52642,
-    "following": 203,
-    "posts": 123,
-    "fotodeperfil": "assets/imagenes/2.jpg"
+  usuario: any = {
+    
   }
 
   editando = false;
@@ -32,6 +31,12 @@ export class PerfilComponent implements OnInit {
 
   guardarNuevaBio(): void {
     this.usuario.descripcion = this.bio;
-    this.toggleEditar;
-  }    
+    this.toggleEditar();
+  }  
+  
+  getDatosUsuario(): void{
+    this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario.json').subscribe(res =>{
+      this.usuario=res;
+    })
+  }
 }
