@@ -1,3 +1,50 @@
-<ion-content>
+<ion-app>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>
+                <div class="container">
+                    <ion-icon size="large" name="logo-instagram"></ion-icon>
+                    <ion-label>Instagram</ion-label>
+                    <div class="notificaciones">
+                      <ion-button fill="translucent" id="trigger-notificaciones">
+                        <ion-icon name="heart-outline"></ion-icon>
+                      </ion-button>
+                      <ion-popover trigger="trigger-notificaciones" show-backdrop="false">
+                        <ng-template>
+                          <!--notificaciones aqui-->
+                          <ion-list>
+                            <ion-item>
+                                Notificacion
+                            </ion-item>
+                          </ion-list>
+                        </ng-template>
+                      </ion-popover>
+                    </div>
+                   <div class="perfil">
+                    <ion-avatar>
+                      <ion-img src="/assets/imagenes/2.jpg" id="user-header-pic"></ion-img>
+                      <ion-popover trigger="user-header-pic">
+                        <ng-template>
+                          <ion-list>
+                            <ion-item>
+                              <ion-label>
+                                Cerrar Sesion
+                              </ion-label>
+                            </ion-item>
+                          </ion-list>
+                        </ng-template>
+                      </ion-popover>
+                    </ion-avatar>
+
+         
+            
+                      
+                </div>
+            </div>
+          </ion-title>        
+        </ion-toolbar>
+    </ion-header>
+<ion-content >
     <app-tabs></app-tabs>
 </ion-content>
+<</ion-app>

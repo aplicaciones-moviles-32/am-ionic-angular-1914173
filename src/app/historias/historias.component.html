@@ -1,0 +1,14 @@
+<ion-grid>
+    <ion-row class="historias-container">
+        <ion-col size="2" *ngFor="let historia of historias" class="historias" >
+            <ion-avatar id="avatar">
+                <ion-img src="/assets/imagenes/2.jpg" id="user-header-pic"></ion-img>
+                <ion-modal trigger="avatar">
+                    <ng-template>
+                        <app-historia-contenido></app-historia-contenido>
+                    </ng-template>
+                </ion-modal>
+            </ion-avatar>
+        </ion-col>
+    </ion-row>
+</ion-grid>

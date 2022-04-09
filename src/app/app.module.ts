@@ -16,6 +16,9 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule} from '@angular/common/http';
 
 import { CintaComponent } from './cinta/cinta.component';
+import { PopoverComponent } from './popover/popover.component';
+import { HistoriasComponent } from './historias/historias.component';
+import { HistoriaContenidoComponent } from './historia-contenido/historia-contenido.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { CintaComponent } from './cinta/cinta.component';
     PublicacionesComponent,
     TabsComponent,
     PublicacionComponent,
+    PopoverComponent,
+    HistoriasComponent,
+    HistoriaContenidoComponent,
     CintaComponent
   ],
   imports: [
