@@ -13,18 +13,25 @@ export class BdServiceService {
     return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/publicaciones.json')
   }
   getDatosUsuario(): any{
-    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario.json')
+    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0.json')
   }
   getPublicacionesUsuario(): any{
-    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario/publicaciones.json')
+    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones.json')
   }
   getDetalle(index: any): any{
-    console.log('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario/publicaciones/'+index+'.json');
-      return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario/publicaciones/'+index+'.json')
+    console.log('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+index+'.json');
+      return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+index+'.json')
   }
-  //POST
-
-  //DELETE
-
   //PUT
+  updatePublicacion(index:any, nuevosDatos:any){
+    return this.http.put('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+index+'.json', nuevosDatos)
+  }
+  //DELETE
+  deletePublicacion(index: any){
+    return this.http.delete('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+ index + '.json')
+  }
+  //PUT
+  postPublicacion(post: any) {
+    return this.http.post('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario/0/publicaciones/', post)
+  }
 }

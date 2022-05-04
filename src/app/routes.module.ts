@@ -13,7 +13,7 @@ const routes : Routes=[
     path:'perfil', component: PerfilComponent
   },
   {
-    path: 'publicacion/:id', component: PublicacionComponent
+    path: 'publicacion/:index', component: PublicacionComponent
   }
 ]
 

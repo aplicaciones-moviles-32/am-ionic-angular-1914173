@@ -13,15 +13,21 @@ export class PublicacionComponent implements OnInit {
   load: boolean= true;
   constructor(private ruta: ActivatedRoute, private bd: BdServiceService) { }
 
-  publicacion = this.ruta.snapshot.params['id'];
+  publicacion: string = this.ruta.snapshot.params['index'];
   publicacionImprimir: any = {}
   
   ngOnChanges(): void{
     
   }
   ngOnInit(): void {
-      this.obtenerPublicacion();
+     //this.obtenerPublicacion();
     //this.publicacionImprimir=this.detalle;
+    //publicacionImprimir=this.bd.getDetalle(this.publicacion);
+    this.bd.getDetalle(this.publicacion).subscribe((res: any) =>{
+      this.publicacionImprimir=res;
+      console.log(this.publicacion);
+      this.load=true;
+    })
   }
 
   detalle: any = {
@@ -33,33 +39,5 @@ export class PublicacionComponent implements OnInit {
 
   
   index: any;
-  obtenerPublicacion() : any {
-    this.bd.getPublicacionesUsuario().subscribe((res: any) => {
-      this.publicaciones = res;
-      console.log(this.publicaciones);
-      this.buscarPubli(this.publicacion);
-    })
-  }
-  buscarPubli(s: string) : any {
-    let conta: number =0;
-    for(var i of this.publicaciones){
-      console.log(s);
-      console.log(i.id);
-      if(s == i.id) {
-        this.index = conta;
-        console.log('checked');
-        console.log(this.index);
-      }
-      conta++;
-    }
-    console.log(this.index);
-    this.bd.getDetalle(this.index).subscribe((res: any) =>{
-      this.publicacionImprimir=res;
-      console.log(res);
-      this.load=true;
-    })
-    console.log('going through');
-    console.log(this.publicacionImprimir); 
-  }
 
 }

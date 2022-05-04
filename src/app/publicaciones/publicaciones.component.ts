@@ -13,15 +13,25 @@ export class PublicacionesComponent implements OnInit {
 
   ngOnInit(): void {
     this.bd.getPublicacionesUsuario().subscribe((res: any) => {
-      this.publicaciones = res;
-    })
+      const publisRes: any= res;
+      const publisArray=Object.keys(res).forEach((key:any)=>{
+          console.log(key);
+          if(publisRes[key]!=null){
+          (this.publicaciones).push(publisRes[key]);
+           (this.llaves).push(key);
+          }
+        })
+        
+      });
+      console.log(this.llaves);
+      
   }
 
-  publicaciones: any = [
-  ]
+  llaves: any=[]
+  publicaciones: any = []
 
   getPublicaciones(): void{
-    this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario/publicaciones.json').subscribe(res =>{
+    this.bd.getPublicacionesUsuario().subscribe((res: any) =>{
       this.publicaciones=res;
     })
   }
