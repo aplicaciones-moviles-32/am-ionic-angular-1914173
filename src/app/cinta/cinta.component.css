@@ -1,0 +1,14 @@
+.container ion-label {
+    text-align: left;
+    flex: 1 0 80%;
+}
+
+.container{
+    display: flex;
+   align-items: center;
+}
+
+ion-avatar{
+    width: 25px;
+    height: 25px;
+}

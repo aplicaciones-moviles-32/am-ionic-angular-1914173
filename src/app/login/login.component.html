@@ -1,0 +1,20 @@
+<ion-content>
+    <ion-grid>
+                    <form novalidate [formGroup]="datos">
+                        <ion-row>
+                            <ion-col>
+                                <ion-input  formControlName="user" placeholder="Usuario"></ion-input>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-input formControlName="password" placeholder="Contraseña"></ion-input>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-button type="submit" [disabled]="datos.invalid" class="boton" (click)="login()">Guardar</ion-button>
+                        </ion-row>
+                    </form>
+                
+    </ion-grid>
+</ion-content>

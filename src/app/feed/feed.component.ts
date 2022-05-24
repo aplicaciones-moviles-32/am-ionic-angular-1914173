@@ -12,17 +12,38 @@ import { PopoverComponent } from '../popover/popover.component';
 })
 export class FeedComponent implements OnInit {
 
-  constructor(private http: HttpClient, private bd: BdServiceService, private popover: PopoverController ) { }
+  constructor(private http: HttpClient, private bd: BdServiceService, private popoverController: PopoverController ) { }
 
   ngOnInit(): void {
     this.bd.getPublicaciones().subscribe((res: any) => {
-      this.posts=res;
+      for (let index = 0; index < res.length; index++) {
+        if(res[index].nombre!=this.usuario) {
+          for (let i = 0; i < res[index].publicaciones.length; i++) {
+            this.posts.push(res[index].publicaciones[i]);
+          }
+        } 
+      }
     });
+    console.log(this.posts);
   }
 
   getPublicaciones(): any {
-    
   }
-  posts: any = [
-  ];
+
+  usuarios: any=[];
+  usuario: any="Gizmo";
+  buffer:any =[];
+  posts: any = [];
+
+  async mostrarPopover(ev: any, id:any) {
+    console.log(id);
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      event: ev,
+      translucent: true,
+
+    });
+    await popover.present();
+    const { data } = await popover.onDidDismiss();
+  }
 }

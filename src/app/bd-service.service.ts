@@ -7,10 +7,8 @@ export class BdServiceService {
 
   constructor(private http: HttpClient) { }
   //GET
-  
-
   getPublicaciones(): any{
-    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/publicaciones.json')
+    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios.json')
   }
   getDatosUsuario(): any{
     return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0.json')
@@ -19,8 +17,7 @@ export class BdServiceService {
     return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones.json')
   }
   getDetalle(index: any): any{
-    console.log('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+index+'.json');
-      return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+index+'.json')
+    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+index+'.json')
   }
   //PUT
   updatePublicacion(index:any, nuevosDatos:any){
@@ -30,7 +27,7 @@ export class BdServiceService {
   deletePublicacion(index: any){
     return this.http.delete('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+ index + '.json')
   }
-  //PUT
+  //POST
   postPublicacion(post: any) {
     return this.http.post('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario/0/publicaciones/', post)
   }

@@ -13,4 +13,6 @@ export class AppComponent {
   togglePerfil(): void {
     this.perfil = !this.perfil;
   }
+  log:boolean=true;
+  logToogle: boolean=!this.log;
 }

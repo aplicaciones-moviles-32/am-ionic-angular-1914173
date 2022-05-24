@@ -1,4 +1,5 @@
 <ion-content>
+    <app-cinta></app-cinta>
     <ion-grid>
         <ion-row>
             <ion-col>
@@ -7,9 +8,9 @@
         </ion-row>
     </ion-grid>
 
-    <ion-grid>
-        <ion-row *ngFor="let post of posts">
-            <ion-col>
+    <ion-grid >
+        <ion-row *ngFor="let post of posts; let postId = index;" >
+            <ion-col size-md="8" offset-md="2" >
                 <ion-card>
                     <ion-card-header>
                         <ion-grid>
@@ -17,39 +18,48 @@
                                 <ion-col size="10">
                                     <div class="usuario-card-header">    
                                         <ion-avatar>
-                                            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" width="50px">
+                                            <img src={{post.fotodeperfil}} width="50px">
                                         </ion-avatar>
                                         <ion-label class="label">{{post.usuario}}</ion-label>
                                     </div>
                                 </ion-col>
 
                                 <ion-col size="2">   
-                                    <ion-button fill="translucent" id="trigger-popup--{{post.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
-                                    <ion-popover trigger="trigger-popup--{{post.id}}">
+                                    <ion-button (click)="mostrarPopover($event, postId)" fill="translucent" id="trigger-popup-{{post.id}}" class="trigger"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></ion-button>
+                                    <!--<ion-popover trigger="trigger-popup-{{post.id}}">
                                         <ng-template>
                                             <app-popover></app-popover>
                                         </ng-template>
-                                    </ion-popover>
+                                    </ion-popover>-->
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
                     </ion-card-header>
 
-
-                    <ion-card-content>
-                        <img src="{{post.src}}" alt="" width="600">
+                    <ion-card-content align="center">
+                        <img src="{{post.imagen}}" class="test">
                         <div class="opciones">
-                            <ion-button fill="translucent"><ion-icon name="heart-outline"></ion-icon></ion-button>
-                            <ion-button fill="translucent"><ion-icon name="paper-plane-outline"></ion-icon></ion-button>
-                            <ion-button fill="translucent"><ion-icon name="chatbubble-outline"></ion-icon></ion-button>
-                            <ion-button class="derecha" fill="translucent"><ion-icon name="bookmark"></ion-icon></ion-button>
+                            <ion-col size="1">
+                                <ion-icon size="small" name="heart-outline"></ion-icon>
+                            </ion-col>
+                            <ion-col size="1">
+                                <ion-icon size="small" name="chatbubble-outline"></ion-icon>
+                            </ion-col>
+                            <ion-col size="1">
+                                <ion-icon size="small"name="paper-plane-outline"></ion-icon>
+                            </ion-col>
+                            <ion-col size="1" offset="8">
+                                <ion-icon size="small" name="bookmark-outline"></ion-icon>
+                            </ion-col>
                         </div>
-                        <p class="caption">{{post.caption}}</p>
+                        <p class="caption"><strong>{{post.likes}} likes</strong></p>
+                        <p class="caption"><strong>{{post.usuario}}</strong> {{post.caption}}</p>
                     </ion-card-content>
                 </ion-card>
             </ion-col>
         </ion-row>
     </ion-grid>
+    
 </ion-content>
         
   

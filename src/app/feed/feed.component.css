@@ -5,8 +5,9 @@
 }
 
 .caption{
-    color: darkgray;
+    color: black;
     font-size: 16px;
+    text-align: left;
 }
 
 .card{
@@ -24,8 +25,7 @@
 }
 
 .opciones {
-    display: flex;
-    
+    display: flex;   
 }
 
 ion-avatar{
@@ -33,4 +33,20 @@ ion-avatar{
     width: 34px;
     height: 34px;
     
+}
+
+.test{
+    
+    width: 100%;
+    min-width: 300px;
+    min-height: 300px;
+    height: auto;
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: cover;
+}
+.test2{
+    max-height: 50vw;
+    max-width: 500px;
+    position: center;
 }

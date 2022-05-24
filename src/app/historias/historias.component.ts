@@ -12,5 +12,5 @@ export class HistoriasComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  historias: any = [1,2,3]
+  historias: any = [1]
 }

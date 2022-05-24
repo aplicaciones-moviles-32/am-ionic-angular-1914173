@@ -1,3 +1,21 @@
 .comment{
-    font-size: 10px;
+    font-size: big;
 }
+
+.caption{
+    font-size: larger;
+    color: black;
+}
+
+ion-card-header{
+    height: 60px
+}
+
+ion-grid.test{
+    height: 0px
+}
+
+.opciones {
+    display: flex;   
+}
+

@@ -1,43 +1,52 @@
-<ion-card *ngIf='load'>
-    <ion-card-header>
-        <ion-grid>
+<ion-content>
+    <app-cinta></app-cinta>
+    <ion-col> <!--No sirve, falta el offset-->
+    <ion-card>
+        <ion-card-header>
+            <ion-grid class="test">
+                <ion-row>
+                    <ion-col class="head" size="10">
+                        <strong> {{publicacionImprimir.usuario}} </strong>
+                    </ion-col>
+                    <ion-col size="1">
+                        <ion-button (click)="mostrarPopover($event)" fill="translucent" class="trigger">
+                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
             <ion-row>
-                <ion-col size="11">
-                    <strong> {{publicacionImprimir.usuario}} </strong>
-                </ion-col>
-                <ion-col size="1">
-                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                <ion-col size="12" align="center">
+                    <img [src]="publicacionImprimir.imagen" alt="" size="12">
                 </ion-col>
             </ion-row>
-        </ion-grid>
-    </ion-card-header>
-    <ion-card-content>
-        <img [src]="publicacionImprimir.imagen" alt="" size="12">
-    <div>
-        <ion-grid>
-            <ion-row>
+            <div class="opciones">
                 <!--iconos-->
                 <ion-col size="1">
-                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-icon size="small" name="heart-outline"></ion-icon>
                 </ion-col>
                 <ion-col size="1">
-                    <ion-icon name="chatbubble-outline"></ion-icon>
+                    <ion-icon size="small" name="chatbubble-outline"></ion-icon>
                 </ion-col>
                 <ion-col size="1">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
+                    <ion-icon size="small" name="paper-plane-outline"></ion-icon>
                 </ion-col>
                 <ion-col size="1" offset="8">
-                    <ion-icon name="bookmark-outline"></ion-icon>
+                    <ion-icon size="small" name="bookmark-outline"></ion-icon>
                 </ion-col>
-            </ion-row>
-        </ion-grid>
-    </div>
-    <ion-label color="dark">{{publicacionImprimir.likes}} Me gusta<br></ion-label>  
-    <ion-label>{{publicacionImprimir.caption}}</ion-label>
-</ion-card-content>
-<div>
-    <ion-item *ngFor="let comentario of publicacionImprimir.comments">
-        <ion-label class="comment"><strong>{{comentario.usuario}}</strong> {{comentario.comentario}}</ion-label>
-    </ion-item>
-</div>
-</ion-card>
+            </div>
+            <ion-label class="caption"><strong>{{publicacionImprimir.likes}} Me gusta</strong><br></ion-label>
+            <ion-label class="caption"><strong>{{publicacionImprimir.user}}</strong>{{publicacionImprimir.caption}}<br>
+            </ion-label>
+        </ion-card-content>
+        <div>
+            <ion-item *ngFor="let comentario of publicacionImprimir.comments">
+                <ion-label class="comment"><strong>{{comentario.usuario}}</strong> {{comentario.comentario}}</ion-label>
+            </ion-item>
+        </div>
+    </ion-card>
+</ion-col>
+
+</ion-content>

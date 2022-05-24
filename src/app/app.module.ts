@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FeedComponent } from './feed/feed.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PublicacionesComponent } from './publicaciones/publicaciones.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoutesModule } from './routes.module';
 import { TabsComponent } from './tabs/tabs.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
@@ -19,6 +19,9 @@ import { CintaComponent } from './cinta/cinta.component';
 import { PopoverComponent } from './popover/popover.component';
 import { HistoriasComponent } from './historias/historias.component';
 import { HistoriaContenidoComponent } from './historia-contenido/historia-contenido.component';
+import { Popover2Component } from './popover2/popover2.component';
+import { LoginComponent } from './login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { HistoriaContenidoComponent } from './historia-contenido/historia-conten
     PopoverComponent,
     HistoriasComponent,
     HistoriaContenidoComponent,
-    CintaComponent
+    CintaComponent,
+    Popover2Component,
+    LoginComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,8 @@ import { HistoriaContenidoComponent } from './historia-contenido/historia-conten
     IonicModule.forRoot(),
     RoutesModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

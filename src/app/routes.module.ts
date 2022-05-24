@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {FeedComponent} from './feed/feed.component';
 import {PerfilComponent} from './perfil/perfil.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
+import { LoginComponent } from './login/login.component';
+import { TabsComponent } from './tabs/tabs.component';
+
 const routes : Routes=[
   {
     path:'feed', component: FeedComponent
@@ -14,6 +17,9 @@ const routes : Routes=[
   },
   {
     path: 'publicacion/:index', component: PublicacionComponent
+  },
+  {
+    path: 'login', component: LoginComponent
   }
 ]
 

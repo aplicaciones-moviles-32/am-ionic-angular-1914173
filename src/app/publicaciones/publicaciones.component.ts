@@ -15,7 +15,6 @@ export class PublicacionesComponent implements OnInit {
     this.bd.getPublicacionesUsuario().subscribe((res: any) => {
       const publisRes: any= res;
       const publisArray=Object.keys(res).forEach((key:any)=>{
-          console.log(key);
           if(publisRes[key]!=null){
           (this.publicaciones).push(publisRes[key]);
            (this.llaves).push(key);
