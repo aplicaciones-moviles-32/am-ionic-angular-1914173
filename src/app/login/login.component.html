@@ -12,9 +12,9 @@
                             </ion-col>
                         </ion-row>
                         <ion-row>
-                            <ion-button type="submit" [disabled]="datos.invalid" class="boton" (click)="login()">Guardar</ion-button>
+                            <ion-button type="submit" [disabled]="datos.invalid" class="boton" (click)="redirect()">Guardar</ion-button>
                         </ion-row>
                     </form>
-                
+                    <ion-button (click)="redirect()">LOG</ion-button>
     </ion-grid>
 </ion-content>

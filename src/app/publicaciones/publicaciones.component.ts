@@ -29,7 +29,7 @@ export class PublicacionesComponent implements OnInit {
   llaves: any=[]
   publicaciones: any = []
 
-  getPublicaciones(): void{
+  getPublicaciones(){
     this.bd.getPublicacionesUsuario().subscribe((res: any) =>{
       this.publicaciones=res;
     })

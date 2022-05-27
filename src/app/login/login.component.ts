@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BdServiceService } from '../bd-service.service';
+import { MainComponent } from '../main/main.component';
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,7 @@ import { BdServiceService } from '../bd-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private bd: BdServiceService) { }
+  constructor(private bd: BdServiceService, private router: Router) { }
   
   datos: any={
       user:"",
@@ -24,9 +27,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(){
-  
+
+  redirect(){
+    //MainComponent.login();
+    this.router.navigate(['/welcome']);
   }
+  
 
   
 }

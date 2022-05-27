@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { BdServiceService } from '../bd-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -9,14 +10,29 @@ import { BdServiceService } from '../bd-service.service';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor(private http: HttpClient, private bd: BdServiceService) { }
+  constructor(private http: HttpClient, private bd: BdServiceService,
+              private router: Router) { }
 
   ngOnInit(): void {
-    this.bd.getDatosUsuario().subscribe((res: any) => {
-      this.usuario = res;
-    })
+    this.getStatus();
+    setTimeout(() =>{
+      console.log(this.loginfo);
+      this.login();
+    },200)
   }
 
+  login(){
+    console.log(this.loginfo);
+    if(this.loginfo.active==1){
+      this.bd.getDatosUsuario().subscribe((res: any) => {
+        this.usuario = res;
+      })
+    }
+    else{
+      //this.router.navigate(['/']);
+    }
+  }
+  
   usuario: any = {
     
   }
@@ -38,5 +54,13 @@ export class PerfilComponent implements OnInit {
     this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario.json').subscribe(res =>{
       this.usuario=res;
     })
+  }
+
+
+  loginfo: any=[];
+  getStatus(){
+    this.bd.getStatus().subscribe((res: any) => {
+      this.loginfo=res;
+    });
   }
 }

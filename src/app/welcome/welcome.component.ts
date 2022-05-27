@@ -21,7 +21,7 @@ export class WelcomeComponent implements OnInit {
   onResize(event: any) {
   this.innerHeight = window.innerHeight;
   this.altura =  this.innerHeight-30;
-  console.log(this.altura);
+  //console.log(this.altura);
   //var test = document.querySelector('test');
   //document.documentElement.style.setProperty('--altura', this.altura);
   }

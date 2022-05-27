@@ -8,11 +8,15 @@ import { PublicacionComponent } from './publicacion/publicacion.component';
 import { LoginComponent } from './login/login.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { MainComponent } from './main/main.component';
+import { AppComponent } from './app.component';
 
 
 
 const routes : Routes=[
-  {path: '', redirectTo: '/welcome', pathMatch: 'full'},
+  {
+    path: '', redirectTo:'welcome', pathMatch:'full'
+  },
   {
     path:'welcome', component: WelcomeComponent},
   {
@@ -26,6 +30,9 @@ const routes : Routes=[
   },
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'main', component: MainComponent
   }
 ]
 

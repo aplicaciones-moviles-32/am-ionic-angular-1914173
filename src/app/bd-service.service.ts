@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs/internal/Subscription';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,4 +32,18 @@ export class BdServiceService {
   postPublicacion(post: any) {
     return this.http.post('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuario/0/publicaciones/', post)
   }
+
+  //WORK IN PROGRESS
+  //login thing
+  getStatus(){
+    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/logins/0.json')
+  }
+  //CAMBIO EN PUBLIS
+  publiChanges = new EventEmitter();
+  subsVar = Subscription;
+  cargarPublis(){
+    this.publiChanges.emit();
+  }
+
+
 }

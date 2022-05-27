@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, OnChanges} from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BdServiceService } from '../bd-service.service';
 
 import { popoverController } from '@ionic/core';
 import { Popover2Component } from '../popover2/popover2.component';
 import { PopoverController } from '@ionic/angular';
+import { PublicacionesComponent } from '../publicaciones/publicaciones.component';
+
 
 @Component({
   selector: 'app-publicacion',
@@ -15,7 +17,8 @@ import { PopoverController } from '@ionic/angular';
 })
 export class PublicacionComponent implements OnInit {
 
-  constructor(private ruta: ActivatedRoute, private bd: BdServiceService, private popoverController: PopoverController) { }
+  constructor(private ruta: ActivatedRoute, private bd: BdServiceService, private popoverController: PopoverController, 
+              private router: Router) { }
 
   publicacion: string = this.ruta.snapshot.params['index'];
   publicacionImprimir: any = {}
@@ -66,8 +69,13 @@ export class PublicacionComponent implements OnInit {
     }
   }
   borrarPublicacion() {
+    
     this.bd.deletePublicacion(this.publicacion).subscribe((res: any) =>{
-    })
+    setTimeout(() =>{
+      window.location.reload();
+    },1000);
+    });
+    
   }
 
 }

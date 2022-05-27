@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { BdServiceService } from './bd-service.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,12 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ionic-angular-1914173';
-
-  perfil = true;
-
-  togglePerfil(): void {
-    this.perfil = !this.perfil;
+  login:boolean=true;
+  $login: boolean=false;
+  ngOnInit(): void {
   }
-  log:boolean=true;
-  logToogle: boolean=!this.log;
 }
