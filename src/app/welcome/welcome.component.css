@@ -1,0 +1,17 @@
+:root{
+    --altura: 0px;
+}
+
+.test{
+    height: 90%;
+    width: 90%;
+    max-width: 600px;
+    max-height: 1000px;
+    object-fit: contain;
+    
+}
+div.center{
+    text-align: center;
+    align-items: center;
+    height: 100%;
+}

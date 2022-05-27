@@ -22,6 +22,7 @@ import { HistoriaContenidoComponent } from './historia-contenido/historia-conten
 import { Popover2Component } from './popover2/popover2.component';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     CintaComponent,
     Popover2Component,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

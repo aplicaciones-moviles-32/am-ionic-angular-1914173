@@ -5,10 +5,15 @@
 
 .container{
     display: flex;
-   align-items: center;
+    align-items: center;
 }
 
 ion-avatar{
     width: 25px;
     height: 25px;
+}
+
+.img-responsive{
+    height: 45px;
+    width: auto;
 }
