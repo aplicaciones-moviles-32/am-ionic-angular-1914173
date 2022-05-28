@@ -1,0 +1,47 @@
+.comment{
+    font-size: big;
+}
+
+.caption{
+    font-size: larger;
+    color: black;
+}
+
+ion-card-header{
+    height: 60px
+}
+
+ion-grid.test{
+    height: 0px
+}
+
+.opciones {
+    display: flex;   
+}
+
+.head{
+    display:flex;
+}
+
+.label{
+    align-self: center;
+    margin-left: 10px;
+}
+
+ion-avatar{
+    align-self: center;
+    width: 34px;
+    height: 34px;
+    
+}
+
+.test{
+    width: 100%;
+    min-width: 200px;
+    min-height: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    object-position: center;
+    aspect-ratio: 1/1;
+}

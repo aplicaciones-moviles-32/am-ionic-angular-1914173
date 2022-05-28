@@ -9,7 +9,10 @@ export class BdServiceService {
   constructor(private http: HttpClient) { }
   //GET
   getPublicaciones(): any{
-    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios.json')
+    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/publicaciones.json')
+  }
+  getPublicacionDetalle(index: any): any{
+    return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/publicaciones/'+index+'.json')
   }
   getDatosUsuario(): any{
     return this.http.get('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0.json')

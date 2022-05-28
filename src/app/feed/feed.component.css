@@ -50,3 +50,7 @@ ion-avatar{
     max-width: 500px;
     position: center;
 }
+
+ion-modal {
+    --ion-background-color: #ffffff85;
+  }

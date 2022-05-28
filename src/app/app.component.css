@@ -13,3 +13,6 @@ ion-avatar{
     height: 25px;
 }
 
+.modal-wrapper{
+    background: transparent !important;
+}

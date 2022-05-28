@@ -24,6 +24,13 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MainComponent } from './main/main.component';
 
+
+import {Camera, CameraResultType, CameraSource, Photo} from '@capacitor/camera';
+import {Filesystem, Directory} from '@capacitor/filesystem'
+import { SubirComponent } from './subir/subir.component';
+import { Publicacion2Component } from './publicacion2/publicacion2.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +46,9 @@ import { MainComponent } from './main/main.component';
     Popover2Component,
     LoginComponent,
     WelcomeComponent,
-    MainComponent
+    MainComponent,
+    SubirComponent,
+    Publicacion2Component
   ],
   imports: [
     BrowserModule,
@@ -51,7 +60,8 @@ import { MainComponent } from './main/main.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent],
   exports: [RoutesModule]
 })

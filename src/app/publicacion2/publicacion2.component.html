@@ -1,0 +1,62 @@
+<ion-content>
+    <ion-header>
+        <ion-toolbar>
+        </ion-toolbar>
+    </ion-header>
+    <ion-row>
+    <ion-col size-md="8" offset-md="2" size-xl="6" offset-xl="3" size-lg="8" offset-lg="2" size-sm="12" size-xs="12"> 
+    <ion-card>
+        <ion-card-header>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="10">
+                        <div class="head">
+                            <ion-avatar>
+                                <img src={{publicacionImprimir.fotodeperfil}} width="50px">
+                            </ion-avatar>
+                            <ion-label class="label"> <strong> {{publicacionImprimir.usuario}} </strong></ion-label>
+                        </div>
+                    </ion-col>
+                    <ion-col size="2">
+                        <ion-button (click)="mostrarPopover($event)" fill="translucent" id="trigger-popup-{{publicacionImprimir.id}}" class="trigger">
+                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-row>
+                <ion-col size="12" align="center">
+                    <img class="test" [src]="publicacionImprimir.imagen" alt="" size="12">
+                </ion-col>
+            </ion-row>
+            <div class="opciones">
+                <!--iconos-->
+                <ion-col size="1">
+                    <ion-icon size="small" name="heart-outline"></ion-icon>
+                </ion-col>
+                <ion-col size="1">
+                    <ion-icon size="small" name="chatbubble-outline"></ion-icon>
+                </ion-col>
+                <ion-col size="1">
+                    <ion-icon size="small" name="paper-plane-outline"></ion-icon>
+                </ion-col>
+                <ion-col size="1" offset="8">
+                    <ion-icon size="small" name="bookmark-outline"></ion-icon>
+                </ion-col>
+            </div>
+            <ion-label class="caption"><strong>{{publicacionImprimir.likes}} Me gusta</strong><br></ion-label>
+            <ion-label class="caption"><strong>{{publicacionImprimir.user}}</strong>{{publicacionImprimir.caption}}<br>
+            </ion-label>
+        </ion-card-content>
+        <div>
+            <ion-item *ngFor="let comentario of publicacionImprimir.comments">
+                <ion-label class="comment"><strong>{{comentario.usuario}}</strong> {{comentario.comentario}}</ion-label>
+            </ion-item>
+        </div>
+    </ion-card>
+</ion-col>
+</ion-row>
+
+</ion-content>

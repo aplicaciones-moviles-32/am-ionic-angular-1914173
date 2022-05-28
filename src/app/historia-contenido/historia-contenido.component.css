@@ -1,0 +1,7 @@
+ion-content {
+    --background-color:transparent;
+  }
+
+.my-custom-modal {
+    --backdrop-opacity: 100 !important;
+}

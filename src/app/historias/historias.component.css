@@ -7,3 +7,7 @@
     display: inline-block;
     margin-right: 20px;
 }
+
+.my-custom-modal {
+    --backdrop-opacity: 0;
+}

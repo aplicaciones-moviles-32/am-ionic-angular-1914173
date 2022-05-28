@@ -14,11 +14,9 @@ export class PerfilComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.getStatus();
-    setTimeout(() =>{
-      console.log(this.loginfo);
-      this.login();
-    },200)
+    this.bd.getDatosUsuario().subscribe((res: any) => {
+      this.usuario = res;
+    })
   }
 
   login(){

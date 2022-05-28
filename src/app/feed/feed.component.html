@@ -40,7 +40,7 @@
                     </ion-card-header>
 
                     <ion-card-content align="center">
-                        <img src="{{post.imagen}}" class="test">
+                        <img src="{{post.imagen}}" class="test"  [routerLink]="['/post', postId]">
                         <div class="opciones">
                             <ion-col size="1">
                                 <ion-icon size="small" name="heart-outline"></ion-icon>

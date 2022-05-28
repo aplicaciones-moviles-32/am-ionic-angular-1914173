@@ -10,6 +10,8 @@ import { TabsComponent } from './tabs/tabs.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MainComponent } from './main/main.component';
 import { AppComponent } from './app.component';
+import { SubirComponent } from './subir/subir.component';
+import { Publicacion2Component } from './publicacion2/publicacion2.component';
 
 
 
@@ -33,6 +35,12 @@ const routes : Routes=[
   },
   {
     path: 'main', component: MainComponent
+  },
+  {
+    path: 'subir', component: SubirComponent
+  },
+  {
+    path: 'post/:index', component: Publicacion2Component
   }
 ]
 

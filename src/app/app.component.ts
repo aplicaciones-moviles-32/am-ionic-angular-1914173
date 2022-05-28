@@ -6,7 +6,7 @@ import { BdServiceService } from './bd-service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ionic-angular-1914173';
+  title = 'app';
   login:boolean=true;
   $login: boolean=false;
   ngOnInit(): void {

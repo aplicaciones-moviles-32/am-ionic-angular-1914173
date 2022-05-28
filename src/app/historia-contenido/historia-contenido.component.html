@@ -1,1 +1,24 @@
-<p>historia-contenido works!</p>
+
+<ion-row>
+    <ion-col size-md="8" offset-md="2" size-xl="6" offset-xl="3" size-lg="8" offset-lg="2" size-sm="12" size-xs="12"> 
+    
+    <ion-card>
+        <ion-card-header>
+            <ion-toolbar>
+                <ion-buttons slot="end">
+                    <ion-button (click)="close()">
+                        <ion-icon slot="icon-only" name="close"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-row>
+                <ion-col size="12" align="center">
+                    <img class="test" [src]="publicacionImprimir.imagen" alt="" size="12">
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+</ion-col>
+</ion-row>

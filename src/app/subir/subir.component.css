@@ -1,0 +1,30 @@
+
+
+.test{
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    max-height: 1000px;
+    object-fit: cover;
+    
+}
+div.center{
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.center a{
+    position: relative;
+    bottom:5em;
+    background-color:#020202;
+    border-radius:1.0em;
+    color:white;
+    padding:1em 1em;
+}
+ion-button{
+    position: relative;
+    bottom:10em;
+}
