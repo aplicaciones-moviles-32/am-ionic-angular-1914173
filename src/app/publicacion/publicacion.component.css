@@ -46,3 +46,7 @@ ion-avatar{
     aspect-ratio: 1/1;
 }
 
+.borde-input {
+    border: solid 2px black;
+}
+

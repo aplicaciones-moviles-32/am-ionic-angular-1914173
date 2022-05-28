@@ -49,6 +49,13 @@
             <ion-label class="caption"><strong>{{publicacionImprimir.likes}} Me gusta</strong><br></ion-label>
             <ion-label class="caption"><strong>{{publicacionImprimir.user}}</strong>{{publicacionImprimir.caption}}<br>
             </ion-label>
+            <ion-row *ngIf="editando">
+                <ion-input [(ngModel)]="caption" class="borde-input"></ion-input>
+            </ion-row>
+            <ion-row *ngIf="editando">
+                <ion-button expand="block" fill="outline" color="dark" (click)="guardarNuevaCaption()">Guardar</ion-button>
+                <ion-button expand="block" fill="outline" color="dark" (click)="toggleEditar()">Cancelar</ion-button>
+            </ion-row>
         </ion-card-content>
         <div>
             <ion-item *ngFor="let comentario of publicacionImprimir.comments">

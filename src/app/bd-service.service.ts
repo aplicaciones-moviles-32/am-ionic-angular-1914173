@@ -27,6 +27,10 @@ export class BdServiceService {
   updatePublicacion(index:any, nuevosDatos:any){
     return this.http.put('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+index+'.json', nuevosDatos)
   }
+  updateCaption(index:any, nuevaPubli:any){
+    return this.http.put('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+index+'.json', nuevaPubli)
+  }
+
   //DELETE
   deletePublicacion(index: any){
     return this.http.delete('https://insta-base-64ec2-default-rtdb.firebaseio.com/usuarios/0/publicaciones/'+ index + '.json')

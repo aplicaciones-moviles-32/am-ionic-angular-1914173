@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, OnChanges} from '@angular/core';
+import { Component, OnInit, OnChanges, Input} from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { BdServiceService } from '../bd-service.service';
@@ -22,7 +22,10 @@ export class PublicacionComponent implements OnInit {
 
   publicacion: string = this.ruta.snapshot.params['index'];
   publicacionImprimir: any = {}
+  editando= false;
   
+  @Input() caption: string = "";
+
   ngOnChanges(): void{
     
   }
@@ -61,13 +64,25 @@ export class PublicacionComponent implements OnInit {
     if (data.respuesta=="eliminar") {
       this.borrarPublicacion();
     }
-    if(data=="ocultar"){
-
+    if(data.respuesta=="ocultar"){
+      console.log('ocultar');
     }
-    if (data=="editar"){
-
+    if (data.respuesta=="editar"){
+      this.toggleEditar();
     }
   }
+
+  toggleEditar(): void {
+    this.editando = !this.editando;
+  }
+
+  guardarNuevaCaption(): void {
+    this.publicacionImprimir.caption = this.caption;
+    console.log(this.publicacionImprimir);
+    this.bd.updateCaption(this.publicacion,this.publicacionImprimir).subscribe();
+    this.toggleEditar();
+  } 
+
   borrarPublicacion() {
     
     this.bd.deletePublicacion(this.publicacion).subscribe((res: any) =>{
